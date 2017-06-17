@@ -1,0 +1,15 @@
+{
+  "name": "bugfit",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2"
+  },
+  "scripts": {
+    "build": "babel static/js/src -d static/js/lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
+}
