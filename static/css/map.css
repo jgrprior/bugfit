@@ -42,6 +42,31 @@ html, body {
     font-size: 15px;
     border-radius: 0px;
     margin: 9px;
-    width: 27%;
+    width: 80%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+
+	padding-left:28px;
+	background-repeat: no-repeat;
+	background-position-y: 13px;
+	background-position-x: 5px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADbSURBVDhP5ZI9C4MwEIb7//+BEDgICA6C4OQgBJy6dRIEB6EgCNkEJ4e3iT2oHzH9wHbpAwfyJvfkJDnhYH4kHDVKlSAigSAQoCiBKjVGXvaxFXZnxBQYkSlBICII+22K4jM63rbHSthCSdsskVX9Y6KxR5XJSSpVy6GbpbBKp6aw0BzM0ShCe1iKihMXC6EuQtMQwukzPFu3fFd4+C+/cimUNxy6WQkNnmdzL3NYPfDmLVuhZf2wZYz80qDkKX1St3CXAfVMqq4cz3hTaGEpmctxDPmB0M/fCYEbAwZYyVKYcroAAAAASUVORK5CYII=);
+}
+    
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #pac-input {
+        width: 48%;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #pac-input {
+        width: 28%;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

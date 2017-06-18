@@ -122,3 +122,5 @@ func (mb *mockBody) Close() error { return nil }
 type cacheData struct {
 	Bytes []byte `datastore:",noindex"`
 }
+
+// TODO: Add timestamp to datastore entity
