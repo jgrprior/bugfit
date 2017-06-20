@@ -1,14 +1,17 @@
 "use strict";
-  
+
 function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(2.8,-187.3),
+        zoom: 4,
+        center: new google.maps.LatLng(51.5,0.12),
         mapTypeControl: false,
     });
 
     const infoWindow = new google.maps.InfoWindow();
-    infoWindow.setOptions({pixelOffset: new google.maps.Size(0, -30)});
+    infoWindow.setOptions({
+        pixelOffset: new google.maps.Size(0, -30),
+        maxWidth: 350
+    });
 
     // Fit to markers when everything has settled down.
     const bounds = new google.maps.LatLngBounds();
@@ -52,12 +55,13 @@ function initMap() {
         const address = event.feature.getProperty('address');
         const locationUrl = event.feature.getProperty('locationUrl');
         const position = event.feature.getGeometry().get();
+        // TODO: Add BF logo
         const content = sanitizeHTML`
             <div id="content">
               <h4>${title}</h4>
               <div id="bodyContent">
                 <p>${address}</p>
-                <p>Link: <a href="${locationUrl}" target="_blank">${locationUrl}</a></p>
+                <p>Class details at <a href="${locationUrl}" target="_blank">www.buggyfit.co.uk</a></p>
               </div>
             </div>
         `;

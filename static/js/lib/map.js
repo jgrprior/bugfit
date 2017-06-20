@@ -1,18 +1,21 @@
 "use strict";
 
-var _templateObject = _taggedTemplateLiteral(['\n            <div id="content">\n              <h4>', '</h4>\n              <div id="bodyContent">\n                <p>', '</p>\n                <p>Link: <a href="', '" target="_blank">', '</a></p>\n              </div>\n            </div>\n        '], ['\n            <div id="content">\n              <h4>', '</h4>\n              <div id="bodyContent">\n                <p>', '</p>\n                <p>Link: <a href="', '" target="_blank">', '</a></p>\n              </div>\n            </div>\n        ']);
+var _templateObject = _taggedTemplateLiteral(['\n            <div id="content">\n              <h4>', '</h4>\n              <div id="bodyContent">\n                <p>', '</p>\n                <p>Class details at <a href="', '" target="_blank">www.buggyfit.co.uk</a></p>\n              </div>\n            </div>\n        '], ['\n            <div id="content">\n              <h4>', '</h4>\n              <div id="bodyContent">\n                <p>', '</p>\n                <p>Class details at <a href="', '" target="_blank">www.buggyfit.co.uk</a></p>\n              </div>\n            </div>\n        ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(2.8, -187.3),
+        zoom: 4,
+        center: new google.maps.LatLng(51.5, 0.12),
         mapTypeControl: false
     });
 
     var infoWindow = new google.maps.InfoWindow();
-    infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
+    infoWindow.setOptions({
+        pixelOffset: new google.maps.Size(0, -30),
+        maxWidth: 350
+    });
 
     // Fit to markers when everything has settled down.
     var bounds = new google.maps.LatLngBounds();
@@ -56,7 +59,8 @@ function initMap() {
         var address = event.feature.getProperty('address');
         var locationUrl = event.feature.getProperty('locationUrl');
         var position = event.feature.getGeometry().get();
-        var content = sanitizeHTML(_templateObject, title, address, locationUrl, locationUrl);
+        // TODO: Add BF logo
+        var content = sanitizeHTML(_templateObject, title, address, locationUrl);
 
         infoWindow.setContent(content);
         infoWindow.setPosition(position);
