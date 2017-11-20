@@ -70,7 +70,7 @@ func WithDatastoreFallback(cnf *config, fallback http.Handler) http.Handler {
 				Expiration: time.Duration(time.Hour),
 			}
 			if err := memcache.Set(c, itm); err != nil {
-				log.Errorf(c, "failed to write to cache", err)
+				log.Errorf(c, "failed to write to cache: %s", err)
 			}
 
 			w.Header().Set("Content-Type", "aplication/json")
